@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class RunTask6 {
+
     public static void main(String[] args) {
         var scanner_instance = new Scanner(System.in);
 
