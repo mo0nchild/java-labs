@@ -1,31 +1,23 @@
+package lab.solution5;
+
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.Scanner;
 
 import labs.helper.types.LabTaskException;
 
-interface IVisualLayerDrawable { public char create_layer(int x); }
-
-enum TaskType {
-    CHESS_TASK(0), SQUARE_TASK(1);
-
-    private int value;
-    TaskType(int value) { this.value = value; }
-
-    public int getValue() { return this.value; }
-}
+interface VisualLayerDrawable { public char create_layer(int x); }
 
 public class LabTask5 {
     private final int w_value, h_value, s_value;
     private boolean layer_switcher = false;
 
     public LabTask5() throws LabTaskException { this(13, 9, 2); }
-    public LabTask5(int wparam, int hparam, int sparam) throws LabTaskException { super();
+    public LabTask5(int w_param, int h_param, int s_param) throws LabTaskException { super();
 
-        if(wparam < 1 || hparam < 1 || sparam < 1 || sparam % 2 == 0) {
+        if(w_param < 1 || h_param < 1 || s_param < 1 || s_param % 2 == 0) {
             throw new LabTaskException("Неверные параметры", this.getClass());
         }
-        this.w_value = wparam; this.h_value = hparam; this.s_value = sparam;
+        this.w_value = w_param; this.h_value = h_param; this.s_value = s_param;
     }
 
     private void drawSquare(PrintStream printer) {
@@ -64,9 +56,11 @@ public class LabTask5 {
         var buffer_result = new ByteArrayOutputStream(this.h_value * this.w_value);
 
         try (var printer = new PrintStream(buffer_result)) {
+            if (type == null) return "";
+
             switch(type) {
-                case SQUARE_TASK: this.drawSquare(printer); break;
-                case CHESS_TASK: this.drawChess(printer); break;
+                case SQUARE_TASK -> this.drawSquare(printer);
+                case CHESS_TASK -> this.drawChess(printer);
             }
         }
         catch (Exception error) { System.out.println(error.getMessage()); return null; }
@@ -74,7 +68,7 @@ public class LabTask5 {
         return new String(buffer_result.toString());
     }
 
-    void drawLayer(PrintStream printer, IVisualLayerDrawable layer_drawer, char border) {
+    void drawLayer(PrintStream printer, VisualLayerDrawable layer_drawer, char border) {
         printer.print(border);
 
         for(int i = 0; i < this.w_value - 2; i++) printer.print(layer_drawer.create_layer(i - 1));

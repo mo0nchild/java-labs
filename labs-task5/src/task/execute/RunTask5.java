@@ -1,8 +1,23 @@
+package task.execute;
+
+import lab.solution5.LabTask5;
+import lab.solution5.TaskType;
+import labs.helper.types.LabTaskRunnable;
+
 import java.util.Scanner;
+import java.util.ServiceLoader;
 
 public class RunTask5 {
 
     public static void main(String[] args) {
+        Iterable<LabTaskRunnable> services =
+                ServiceLoader.load(LabTaskRunnable.class);
+
+        for(var item : services) {
+            try { item.runTask(); }
+            catch (Exception error) { System.out.println(error.getMessage()); }
+        }
+
         try (Scanner input_scanner = new Scanner(System.in)) {
 
             System.out.print("Введите значение W: "); var w_val = input_scanner.nextInt();

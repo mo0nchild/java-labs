@@ -2,8 +2,14 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/labs-task7/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/labs-task7/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test-export/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test-export/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test-import/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test-import/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test/src/main/resources" charset="UTF-8" />
   </component>

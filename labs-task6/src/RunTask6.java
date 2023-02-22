@@ -16,13 +16,11 @@ public class RunTask6 {
         try {
             System.out.print("Выберите функцию [1 = cos(x), 2 = e^x]: ");
 
-            LabTask6 task = null;
-            switch (scanner_instance.nextInt()) {
-                case 1: task = new CosCalculator(n_val, e_val); break;
-                case 2: task = new EXCalculator(n_val, e_val); break;
-
-                default: throw new Exception("Неверное задание");
-            }
+            LabTask6 task = switch (scanner_instance.nextInt()) {
+                case 1 -> new CosCalculator(n_val, e_val);
+                case 2 -> new EXCalculator(n_val, e_val);
+                default -> throw new Exception("Неверное задание");
+            };
 
             System.out.printf("Вычисление с N: [%.4f]\n", task.calculateByN(x_val));
             System.out.printf("Вычисление с E: [%.4f]\n", task.calculateByE(x_val));
