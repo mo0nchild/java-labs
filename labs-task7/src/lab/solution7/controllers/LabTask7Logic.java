@@ -7,9 +7,7 @@ import java.util.Comparator;
 public class LabTask7Logic {
     private final Integer[] inputValues;
 
-    public LabTask7Logic(Integer[] input_values) {
-        this.inputValues = input_values;
-    }
+    public LabTask7Logic(Integer[] input_values) { this.inputValues = input_values; }
 
     public Integer[] getInputValues() { return this.inputValues; }
 
