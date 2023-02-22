@@ -1,10 +1,12 @@
 package lab.solution7.controllers;
 
 import labs.helper.types.LabTaskException;
+
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class LabTask7Logic {
+public class LabTask7Logic implements Serializable {
     private final Integer[] inputValues;
 
     public LabTask7Logic(Integer[] input_values) { this.inputValues = input_values; }
