@@ -62,11 +62,23 @@ final public class LabTask8Controller implements Initializable {
     }
 
     private void calculate2ButtonHandler(MouseEvent mouseEvent) {
-    }
+        var direction = this.horizontalToggleButton.selectedProperty().get()
+                ? DirectionType.HORIZONTAL : DirectionType.VERTICAL;
 
+        try { this.labLogic.calculateTask2(this.dashValueSpinner.getValue(), direction); }
+        catch (LabTaskException error) { new Alert(Alert.AlertType.WARNING, error.getMessage()); }
+
+        LabTask8Controller.tableValuesUpdate(this.dataTableView, this.labLogic.getTaskData());
+    }
     private void calculate1ButtonHandler(MouseEvent mouseEvent) {
-        try { this.result1TextField.setText(String.valueOf(this.labLogic.calculateTask1())); }
-        catch (LabTaskException error) { throw new RuntimeException(error); }
+        String task_result = null;
+        try {
+            task_result = switch(this.labLogic.calculateTask1()) {
+                case 1 -> "Единички победили "; case -1 -> "Нолики победили"; case 0 -> "Ничья";
+                default -> throw new IllegalStateException("Unexpected value: " + this.labLogic.calculateTask1());
+            };
+        } catch (LabTaskException error) { new Alert(Alert.AlertType.WARNING, error.getMessage()); }
+        this.result1TextField.setText(task_result);
     }
 
     private void fileDialogHandler(Consumer<String> consumer) {

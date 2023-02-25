@@ -4,6 +4,7 @@ import labs.helper.types.LabTaskException;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.Objects;
 
 enum DirectionType implements Serializable { HORIZONTAL, VERTICAL }
@@ -93,13 +94,28 @@ public class LabTask8Logic implements Serializable {
         return ((main_diagonal != -1 ? main_diagonal : sec_diagonal) == 0) ? -1 : 1;
     }
 
-    public Integer[][] calculateTask2(int dash_value, DirectionType direction)
-            throws LabTaskException {
-        var buffer = new Integer[(direction == DirectionType.HORIZONTAL) ? rowCount : columnCount];
-
-        for(int index = 0; index < dash_value; index++) {
-
+    public Integer[][] calculateTask2(int dash_value, DirectionType direction) throws LabTaskException {
+        final int direction_count, buffer_size;
+        switch (direction) {
+            case HORIZONTAL -> { direction_count = this.columnCount; buffer_size = this.rowCount; }
+            case VERTICAL -> { direction_count = this.rowCount; buffer_size = this.columnCount; }
+            default -> throw new IllegalStateException("Unexpected value: " + direction);
         }
-        return null;
+        var buffer_array = new Integer[buffer_size];
+        for(int index = 0, initial_x = 0; index <= direction_count; index++) {
+            var delta_x = (dash_value + initial_x) % direction_count;
+            delta_x = delta_x < 0 ? direction_count - Math.abs(delta_x) : delta_x;
+
+            var iteration_buffer = Arrays.copyOf(buffer_array, buffer_array.length);
+            for(int k = 0; k < buffer_size; k++) {
+                buffer_array[k] = (direction == DirectionType.HORIZONTAL) ? this.taskData[k][delta_x]
+                    : this.taskData[delta_x][k];
+
+                if(direction == DirectionType.HORIZONTAL) this.taskData[k][delta_x] = iteration_buffer[k];
+                else this.taskData[delta_x][k] = iteration_buffer[k];
+            }
+            initial_x = delta_x;
+        }
+        return this.taskData;
     }
 }
