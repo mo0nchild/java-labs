@@ -1,0 +1,24 @@
+package task.execute;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.util.Objects;
+
+public class RunTask9 extends Application {
+
+    public static void main(String[] args) { Application.launch(args); }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        var fxml_node = RunTask9.class.getResource("/lab/solution9/views/LabTask9View.fxml");
+        var parent = FXMLLoader.load(Objects.requireNonNull(fxml_node));
+
+        stage.setScene(new Scene((Parent)parent));
+        stage.setResizable(false);
+        stage.setTitle("Лабораторная работа 9"); stage.show();
+    }
+}

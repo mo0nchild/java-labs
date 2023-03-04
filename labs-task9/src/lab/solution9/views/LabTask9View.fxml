@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
+<AnchorPane fx:id="rootElement" maxHeight="400.0" maxWidth="600.0" prefHeight="500.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="lab.solution9.controllers.LabTask9Controller" stylesheets="/lab/solution9/views/LabTask9Style.css">
+    <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <Tab text="Выполнение">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <ListView fx:id="taskInput11ListView" layoutX="14.0" layoutY="40.0" prefHeight="130.0" prefWidth="150.0"/>
+                <ListView fx:id="taskInput12ListView" layoutX="225.0" layoutY="40.0" prefHeight="130.0" prefWidth="150.0"/>
+                <ListView fx:id="taskOutput1ListView" layoutX="411.0" layoutY="40.0" prefHeight="130.0" prefWidth="150.0"/>
+                <ListView fx:id="taskInput2ListView" layoutX="14.0" layoutY="194.0" prefHeight="130.0" prefWidth="150.0"/>
+                <ListView fx:id="taskOutput2ListView" layoutX="225.0" layoutY="194.0" prefHeight="130.0" prefWidth="150.0"/>
+                <Line endX="-100.0" endY="278.0" layoutX="296.0" layoutY="29.0" startX="-100.0" startY="11.0"
+                      stroke="#4a4a4a"/>
+                <Label layoutX="14.0" layoutY="177.0" text="Ввод задания 2:"/>
+                <Label layoutX="14.0" layoutY="23.0" text="Ввод задания 1.1:"/>
+                <Label layoutX="225.0" layoutY="23.0" text="Ввод задания 1.2:"/>
+                <Label layoutX="225.0" layoutY="177.0" text="Результат задания 2:"/>
+                <Label layoutX="411.0" layoutY="23.0" text="Результат задания 1:"/>
+                <Button  fx:id="fileReadButton" layoutX="413.0" layoutY="253.0" mnemonicParsing="false" prefHeight="40.0"
+                        prefWidth="150.0"
+                        text="Открыть файл"/>
+                <TextField fx:id="filePathTextField" editable="false" layoutX="15.0" layoutY="332.0" prefHeight="25.0" prefWidth="550.0"/>
+                <Button fx:id="calculateButton" layoutX="413.0" layoutY="194.0" mnemonicParsing="false" prefHeight="40.0"
+                        prefWidth="150.0"
+                        text="Вычислить"/>
+            </AnchorPane>
+        </Tab>
+        <Tab text="Заполнение">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <ListView fx:id="input1ListView" layoutX="24.0" layoutY="36.0" prefHeight="155.0" prefWidth="150.0"/>
+                <ListView fx:id="input2ListView" layoutX="213.0" layoutY="36.0" prefHeight="155.0" prefWidth="150.0"/>
+                <ListView fx:id="input3ListView" layoutX="406.0" layoutY="36.0" prefHeight="155.0" prefWidth="150.0"/>
+                <Button fx:id="add1Button" layoutX="24.0" layoutY="251.0" mnemonicParsing="false" prefHeight="25.0"
+                        prefWidth="150.0" text="Добавить"/>
+                <Button fx:id="clear1Button" layoutX="24.0" layoutY="288.0" mnemonicParsing="false" prefHeight="25.0"
+                        prefWidth="150.0" text="Очистить"/>
+                <Button fx:id="add2Button" layoutX="213.0" layoutY="251.0" mnemonicParsing="false" prefHeight="25.0"
+                        prefWidth="150.0" text="Добавить"/>
+                <Button fx:id="clear2Button" layoutX="213.0" layoutY="288.0" mnemonicParsing="false" prefHeight="25.0"
+                        prefWidth="150.0" text="Очистить"/>
+                <Button fx:id="add3Button" layoutX="406.0" layoutY="251.0" mnemonicParsing="false" prefHeight="25.0"
+                        prefWidth="150.0" text="Добавить"/>
+                <Button fx:id="clear3Button" layoutX="406.0" layoutY="288.0" mnemonicParsing="false" prefHeight="25.0"
+                        prefWidth="150.0" text="Очистить"/>
+                <Label layoutX="24.0" layoutY="19.0" text="Ввод задания 1.1:"/>
+                <Label layoutX="213.0" layoutY="19.0" text="Ввод задания 1.2:"/>
+                <Label layoutX="406.0" layoutY="19.0" text="Ввод задания 2:"/>
+                <Button fx:id="fileWriteButton" layoutX="24.0" layoutY="332.0" mnemonicParsing="false" prefHeight="25.0"
+                        prefWidth="531.0" text="Сохранить в файл"/>
+                <Spinner fx:id="value1Spinner" layoutX="25.0" layoutY="210.0" prefHeight="25.0" prefWidth="150.0">
+                    <valueFactory>
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="0" max="100" min="-100"/>
+                    </valueFactory>
+                </Spinner>
+                <Spinner fx:id="value2Spinner" layoutX="214.0" layoutY="210.0" prefHeight="25.0" prefWidth="150.0">
+                    <valueFactory>
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="0" max="100" min="-100"/>
+                    </valueFactory>
+                </Spinner>
+                <Spinner fx:id="value3Spinner" layoutX="407.0" layoutY="210.0">
+                    <valueFactory>
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="0" max="100" min="-100"/>
+                    </valueFactory>
+                </Spinner>
+            </AnchorPane>
+        </Tab>
+    </TabPane>
+</AnchorPane>

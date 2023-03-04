@@ -7,13 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="labs-task8" />
+        <module name="labs-task9" />
         <module name="labs-task7" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="test" target="19" />
-      <module name="test-export" target="19" />
-      <module name="test-import" target="19" />
-    </bytecodeTargetLevel>
   </component>
 </project>

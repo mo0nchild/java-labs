@@ -63,7 +63,6 @@ class CosCalculator extends LabTask6 {
 }
 
 class EXCalculator extends LabTask6 {
-
     public EXCalculator(int n_param, double e_param) throws LabTaskException {
         super(n_param, e_param);
     }
