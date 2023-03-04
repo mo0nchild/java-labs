@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<?import javafx.scene.PerspectiveCamera?>
+<AnchorPane fx:id="rootElement" maxHeight="400.0" maxWidth="600.0" prefHeight="400.0" prefWidth="600.0" stylesheets="lab/solution8/views/LabTask8Style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab.solution8.controllers.LabTask8Controller">
+    <Label layoutX="10" layoutY="15" styleClass="info-label" text="Данные матрицы:" />
+    <TableView fx:id="dataTableView" fixedCellSize="45" layoutX="7.0" layoutY="34.0" prefHeight="320.0" prefWidth="320.0"
+        style="-fx-border-color: #000;">
+    </TableView>
+    <FlowPane alignment="TOP_CENTER" maxHeight="400.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="300.0" vgap="20" AnchorPane.rightAnchor="0">
+        <padding>
+            <Insets left="20" right="20" top="14" />
+        </padding>
+        <VBox spacing="6">
+            <Label styleClass="info-label" text="Задание 1:" />
+            <HBox maxWidth="300.0" spacing="15">
+                <Button fx:id="calculate1Button" maxWidth="Infinity" styleClass="input-button" text="Вычислить" HBox.hgrow="ALWAYS" />
+                <TextField fx:id="result1TextField" editable="false" styleClass="input-button"
+                           maxWidth="Infinity" prefWidth="75" HBox.hgrow="ALWAYS" />
+            </HBox>
+        </VBox>
+        <Line endX="200">
+            <FlowPane.margin><Insets left="20" /></FlowPane.margin>
+        </Line>
+        <VBox spacing="6">
+            <HBox maxWidth="300.0" spacing="60">
+                <Label styleClass="info-label" text="Задание 2:" />
+                <Label text="Смещение:" />
+            </HBox>
+            <HBox maxWidth="300.0" spacing="15">
+                <Button fx:id="calculate2Button" maxWidth="Infinity" styleClass="input-button" text="Вычислить" HBox.hgrow="ALWAYS" />
+                <Spinner fx:id="dashValueSpinner" maxWidth="Infinity" prefWidth="75" HBox.hgrow="ALWAYS" styleClass="input-button">
+                    <valueFactory>
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="0" max="5" min="-5" />
+                    </valueFactory>
+                </Spinner>
+            </HBox>
+            <HBox maxWidth="300.0" spacing="40">
+                <VBox.margin> <Insets top="10" /> </VBox.margin>
+                <RadioButton fx:id="horizontalToggleButton" text="Горизонт" >
+                    <toggleGroup><ToggleGroup fx:id="group" /></toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="verticalToggleButton" text="Вертикаль">
+                    <toggleGroup><fx:reference source="group" /></toggleGroup>
+                </RadioButton>
+            </HBox>
+        </VBox>
+        <Line endX="200">
+            <FlowPane.margin><Insets left="20" /></FlowPane.margin>
+        </Line>
+        <VBox spacing="6">
+            <Label text="Изменить значение строки:" styleClass="info-label"/>
+            <HBox maxHeight="100.0" maxWidth="300.0" spacing="10">
+                <ListView fx:id="rowEditListView" maxWidth="110.0" HBox.hgrow="ALWAYS" />
+                <VBox maxWidth="Infinity" HBox.hgrow="ALWAYS" spacing="5">
+                    <Button fx:id="editTableButton" maxWidth="Infinity" HBox.hgrow="ALWAYS" text="Изменить" styleClass="input-button"/>
+                    <Spinner fx:id="editTableSpinner" maxWidth="100.0" HBox.hgrow="ALWAYS" styleClass="input-button">
+                        <valueFactory>
+                            <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="0" max="100" min="-100" />
+                        </valueFactory>
+                    </Spinner>
+                </VBox>
+            </HBox>
+            <HBox spacing="10">
+                <Button fx:id="saveTableButton" styleClass="input-button" maxWidth="Infinity" text="Сохранить" HBox.hgrow="ALWAYS" />
+                <Button fx:id="loadTableButton" styleClass="input-button" maxWidth="Infinity" text="Загрузить" HBox.hgrow="ALWAYS" />
+            </HBox>
+        </VBox>
+
+    </FlowPane>
+</AnchorPane>

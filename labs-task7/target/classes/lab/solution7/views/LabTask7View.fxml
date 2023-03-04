@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane stylesheets="lab/solution7/views/LabTask7Style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab.solution7.controllers.LabTask7Controller">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="429.0">
+        <ListView fx:id="valuesListView" layoutX="14.0" layoutY="34.0" prefHeight="281.0" prefWidth="169.0" />
+        <Spinner fx:id="newValueSpinner" layoutX="314.0" layoutY="34.0" prefHeight="25.0" prefWidth="92.0">
+            <valueFactory>
+                <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="0" max="100" min="-100" />
+            </valueFactory>
+        </Spinner>
+        <Button fx:id="addButton" layoutX="206.0" layoutY="34.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Добавить" />
+        <TextField fx:id="resultTextField" editable="false" layoutX="206.0" layoutY="133.0" prefHeight="25.0" prefWidth="93.0" />
+        <Line endX="100.0" layoutX="294.0" layoutY="174.0" startX="-71.0" stroke="#6f6f6f" />
+        <Button fx:id="calculateButton" layoutX="206.0" layoutY="80.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="93.0" text="Вычислить" />
+        <ComboBox fx:id="testComboBox" layoutX="206.0" layoutY="252.0" prefHeight="25.0" prefWidth="103.0" />
+        <TextField fx:id="testTextField" editable="false" layoutX="325.0" layoutY="252.0" prefHeight="25.0" prefWidth="88.0" />
+        <Button fx:id="clearButton" layoutX="206.0" layoutY="193.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="205.0" text="Очистить таблицу" />
+        <Label layoutX="14.0" layoutY="14.0" text="Массив со значениями:" />
+        <Label layoutX="315.0" layoutY="14.0" text="Новое число:" />
+        <Label layoutX="206.0" layoutY="116.0" text="Результат №1:" />
+        <Label layoutX="206.0" layoutY="235.0" text="Тесты:" />
+        <Label layoutX="324.0" layoutY="235.0" text="Ожидаем:" />
+        <Spinner fx:id="nValueSpinner" layoutX="316.0" layoutY="80.0" prefHeight="25.0" prefWidth="90.0">
+            <valueFactory>
+                <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="1" max="100" min="1" />
+            </valueFactory>
+        </Spinner>
+        <Label layoutX="316.0" layoutY="63.0" text="Значение N:" />
+        <TextField fx:id="test2TextField" editable="false" layoutX="325.0" layoutY="290.0" prefHeight="25.0" prefWidth="88.0" />
+        <Label layoutX="316.0" layoutY="116.0" text="Результат №2:" />
+        <TextField fx:id="result2TextField" editable="false" layoutX="315.0" layoutY="133.0" prefHeight="25.0" prefWidth="90.0" />
+        <TextField fx:id="testNTextField" editable="false" layoutX="235.0" layoutY="290.0" prefHeight="25.0" prefWidth="74.0" />
+        <Label layoutX="209.0" layoutY="294.0" text="N = " />
+    </AnchorPane>
+</AnchorPane>

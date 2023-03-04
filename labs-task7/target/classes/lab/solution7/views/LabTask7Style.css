@@ -1,0 +1,7 @@
+#myButton {
+    -fx-border-color: #000000;
+    -fx-border-width: 20px;
+    -fx-min-width: 100px;
+    -fx-border-radius: 20px;
+    -fx-background-color: #A8FF72;
+}

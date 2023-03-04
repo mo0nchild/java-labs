@@ -56,11 +56,13 @@ public final class LabTask9Controller implements Initializable {
         this.fileDialogHandler((String filepath) -> {
             try {
                 final var file_data = LabTask9Filesystem.fileDataRead(filepath);
-                list1.clear(); list1.addAll(file_data.list1());
-                list2.clear(); list2.addAll(file_data.list2());
+                this.filePathTextField.setText(filepath);
+
+                list1.clear(); list1.addAll(file_data.list1()); list2.clear(); list2.addAll(file_data.list2());
                 list3.clear(); list3.addAll(file_data.list());
             }
             catch (IOException error) { new Alert(Alert.AlertType.ERROR, error.getMessage()).showAndWait(); }
+
         });
     }
     private final void fileWriteHandler(MouseEvent event) {
