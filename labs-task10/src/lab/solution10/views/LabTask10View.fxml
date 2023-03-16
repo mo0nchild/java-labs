@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
+<AnchorPane fx:id="rootElement" maxHeight="400.0" maxWidth="600.0" prefHeight="500.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="lab.solution10.controllers.LabTask10Controller" stylesheets="/lab/solution10/views/LabTask10Style.css">
+
+</AnchorPane>
