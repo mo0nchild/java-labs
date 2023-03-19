@@ -2,11 +2,19 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
 
-<?import javafx.scene.control.SpinnerValueFactory.IntegerSpinnerValueFactory?>
-<AnchorPane fx:id="rootElement" maxHeight="400.0" maxWidth="600.0" prefHeight="500.0" prefWidth="600.0"
-            xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="lab.solution10.controllers.LabTask10Controller" stylesheets="/lab/solution10/views/LabTask10Style.css">
+<AnchorPane fx:id="rootElement" maxHeight="400.0" maxWidth="600.0" prefHeight="500.0" prefWidth="600.0" stylesheets="/lab/solution10/views/LabTask10Style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab.solution10.controllers.LabTask10Controller">
+
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+        <ListView fx:id="dataInputListView" layoutX="14.0" layoutY="33.0" prefHeight="118.0" prefWidth="560.0" styleClass="data-listview" />
+        <ListView fx:id="dataSortedListView" layoutX="15.0" layoutY="186.0" prefHeight="122.0" prefWidth="559.0" styleClass="data-listview" />
+
+        <Label layoutX="14.0" layoutY="14.0" styleClass="info-label" text="Исходный список:" />
+        <Label layoutX="14.0" layoutY="157.0" styleClass="info-label" text="Отсортированный список:" />
+    </AnchorPane>
+
+    <Button fx:id="fileLoadButton" layoutX="300.0" layoutY="354.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="269.0" styleClass="input-button" text="Открыть файл | Выполнить сортировку" />
+    <ComboBox fx:id="modesComboBox" styleClass="input-button" layoutX="14.0" layoutY="354.0" prefHeight="25.0" prefWidth="275.0" />
+    <Label layoutX="14.0" layoutY="337.0" text="Выбор режима:" />
 
 </AnchorPane>

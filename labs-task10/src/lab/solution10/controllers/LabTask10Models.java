@@ -11,8 +11,8 @@ import java.util.Iterator;
 
 public class LabTask10Models {
 
-    public static final class Triangle implements FilesystemObject, Iterable<Triangle.Point> {
-
+    public static final class Triangle implements Cloneable, FilesystemObject, Iterable<Triangle.Point> {
+        private static Integer instanceCount = 0;
         public static class TriangleBuilder implements FilesystemObjectBuilder {
             @Override
             public final FilesystemObject decodeRecord(String record) throws Exception {
@@ -24,35 +24,32 @@ public class LabTask10Models {
                         new Point(Integer.parseInt(record_part[4]), Integer.parseInt(record_part[5]))
                 );
             }
-
-            @Override
-            public <TObject extends FilesystemObject> boolean checkCombine() {
-                return TObject.ca == Triangle::getClass;
-            }
-
         }
-
-        @Override
-        public String setRecord(char border) {
-            return null;
+        @Override public final String setRecord(char border) {
+            return String.valueOf(this.vertex1.x) + border + String.valueOf(this.vertex1.y) + border
+                    + String.valueOf(this.vertex2.x) + border + String.valueOf(this.vertex2.y) + border
+                    + String.valueOf(this.vertex3.x) + border + String.valueOf(this.vertex3.y);
         }
-
         public static record Point(Integer x, Integer y) { }
         private final Point vertex1, vertex2, vertex3;
+        private final Integer triangleId;
+        @NotNull Integer getTriangleId() { return this.triangleId; }
 
         @NotNull public final Point getVertex1() { return this.vertex1; }
         @NotNull public final Point getVertex2() { return this.vertex2; }
         @NotNull public final Point getVertex3() { return this.vertex3; }
 
-        public Triangle(Point vertex1, Point vertex2, Point vertex3) { super();
-            this.vertex1 = vertex1;
-            this.vertex2 = vertex2;
-            this.vertex3 = vertex3;
+        private Triangle(Point vertex1, Point vertex2, Point vertex3, int id) { super();
+            this.vertex1 = vertex1; this.vertex2 = vertex2; this.vertex3 = vertex3;
+            this.triangleId = id;
+        }
+        public Triangle(Point vertex1, Point vertex2, Point vertex3) {
+            this(vertex1, vertex2, vertex3, ++Triangle.instanceCount);
         }
 
         public Triangle clone() throws CloneNotSupportedException {
             super.clone();
-            return new Triangle(this.getVertex1(), this.getVertex2(), this.getVertex3());
+            return new Triangle(this.vertex1, this.vertex2, this.vertex3, this.getTriangleId());
         }
 
         private static Double getSideLength(Point a, Point b) {
@@ -86,9 +83,27 @@ public class LabTask10Models {
             @Override public boolean hasNext() { return vertexes.length > this.currentIndex; }
             @Override public Point next() { return this.vertexes[this.currentIndex++]; }
         }
+
+        @Override public final String toString() {
+            return "[ triangleID" + this.getTriangleId() + " ]: [ {" + this.vertex1.x + ", "
+                    + this.vertex1.y + "}, {" + this.vertex2.x + ", "
+                    + this.vertex2.y + "}, {" + this.vertex3.x + ", " + this.vertex3.y + "} ] = "
+                    + this.getArea();
+        }
     }
 
-    public static final class Student implements Serializable {
+    public static final class Student implements Cloneable, FilesystemObject {
+
+        public static class StudentBuilder implements FilesystemObjectBuilder {
+            @Override
+            public FilesystemObject decodeRecord(String record) throws Exception {
+                var record_part = record.split(" ");
+                if(record_part.length != 5) throw new Exception("Бракованные данные");
+
+                return new Student(record_part[0], record_part[1], record_part[2],
+                        record_part[3], Integer.parseInt(record_part[4]));
+            }
+        }
         private final String lastName, firstName, patronymic, group;
         private final Integer course;
 
@@ -114,6 +129,20 @@ public class LabTask10Models {
         public static Student fromFIO(String FIO, String group, Integer course) {
             var fio_parts = FIO.split(" ");
             return new Student(fio_parts[0], fio_parts[1], fio_parts[2], group, course);
+        }
+
+        @Override public final String setRecord(char border) {
+            return this.getFirstName() + border + this.getLastName() + border + this.getPatronymic()
+                + border + this.getGroup() + border + this.getCourse();
+        }
+
+        @Override public Student clone() throws CloneNotSupportedException {
+            super.clone();
+            return Student.fromFIO(this.getFIO(), getGroup(), getCourse());
+        }
+
+        @Override public final String toString() {
+            return "[ " +  this.getFIO() + "; " + this.getGroup() + "; " + this.getCourse() + " ]";
         }
 
         public static final class StudentFIOComparator implements Comparator<Student> {

@@ -1,5 +1,7 @@
 package lab.solution10.controllers;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,16 +12,14 @@ interface FilesystemObject extends Serializable { public String setRecord(char b
 
 interface FilesystemObjectBuilder extends Serializable {
     public FilesystemObject decodeRecord(String record) throws Exception;
-    public <TObject extends FilesystemObject> boolean checkCombine();
 }
 
 public class LabTask10Filesystem implements Serializable {
     public LabTask10Filesystem() { super(); }
 
-    public static <TResult extends FilesystemObject> List<TResult> fileDataRead(
-            String filepath, FilesystemObjectBuilder builder) throws IOException {
-        if (builder.checkCombine())
-        List<TResult> result = null;
+    public static List<FilesystemObject> fileDataRead(String filepath, FilesystemObjectBuilder builder)
+            throws IOException {
+        var result = new ArrayList<FilesystemObject>();
         if(!new File(filepath).exists()) throw new IOException("Файл не найден");
 
         try (var file_stream = new BufferedReader(new FileReader(filepath))) {
@@ -30,6 +30,18 @@ public class LabTask10Filesystem implements Serializable {
         }
         catch (Exception error) { throw new IOException(error.getMessage()); }
         return result;
+    }
+
+    public static void fileDataWrite(String filepath, @NotNull FilesystemObject[] data) throws IOException {
+        if(filepath == null) throw new IOException("Нет данных");
+        var file_descriptor = new File(filepath);
+        if (!file_descriptor.exists()) {
+            if (!file_descriptor.createNewFile()) throw new IOException("Файл не подготовлен");
+        }
+        try (var file_stream = new BufferedWriter(new FileWriter(filepath))) {
+            for(var item : data) file_stream.write(item.setRecord(' ') + "\n");
+        }
+        catch (IOException error) { throw error; }
     }
 
 }
