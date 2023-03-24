@@ -1,0 +1,27 @@
+package task.execute;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.Serializable;
+import java.util.Objects;
+
+public class RunTask12 extends Application {
+
+    public static void main(String[] args) { Application.launch(args); }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        var fxml_node = RunTask12.class.getResource("/lab/solution12/views/LabTask12View.fxml");
+        var parent = FXMLLoader.load(Objects.requireNonNull(fxml_node));
+
+        stage.setScene(new Scene((Parent) parent));
+        stage.setMaxWidth(900); stage.setMaxHeight(600);
+        stage.setResizable(false);
+        stage.setTitle("Лабораторная работа 12");
+        stage.show();
+    }
+}

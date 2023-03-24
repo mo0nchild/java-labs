@@ -10,6 +10,7 @@
         <module name="labs-task9" />
         <module name="labs-task10" />
         <module name="labs-task11" />
+        <module name="labs-task12" />
         <module name="labs-task7" />
       </profile>
     </annotationProcessing>

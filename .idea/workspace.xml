@@ -4,25 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2be7d921-48a1-47f3-8f47-1232da070bcd" name="Changes" comment="ver=1.55">
-      <change afterPath="$PROJECT_DIR$/labs-task11/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs-task11/src/lab/solution11/controllers/LabTask11Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs-task11/src/lab/solution11/controllers/LabTask11Filesystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs-task11/src/lab/solution11/controllers/LabTask11Logic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs-task11/src/lab/solution11/views/LabTask11Style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs-task11/src/lab/solution11/views/LabTask11View.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs-task11/src/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs-task11/src/task/execute/RunTask11.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs-task11/text_dictanct.txt" afterDir="false" />
+    <list default="true" id="2be7d921-48a1-47f3-8f47-1232da070bcd" name="Changes" comment="ver=1.6">
+      <change afterPath="$PROJECT_DIR$/labs-task12/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs-task12/src/lab/solution12/controllers/LabTask12Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs-task12/src/lab/solution12/controllers/LabTask12Logic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs-task12/src/lab/solution12/views/LabTask12Style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs-task12/src/lab/solution12/views/LabTask12View.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs-task12/src/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs-task12/src/task/execute/RunTask12.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labs-task10/src/lab/solution10/controllers/LabTask10Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/labs-task10/src/lab/solution10/controllers/LabTask10Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labs-task10/src/lab/solution10/controllers/LabTask10Filesystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/labs-task10/src/lab/solution10/controllers/LabTask10Filesystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labs-task10/src/lab/solution10/controllers/LabTask10Models.java" beforeDir="false" afterPath="$PROJECT_DIR$/labs-task10/src/lab/solution10/controllers/LabTask10Models.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labs-task10/src/lab/solution10/views/LabTask10Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/labs-task10/src/lab/solution10/views/LabTask10Style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labs-task10/src/lab/solution10/views/LabTask10View.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/labs-task10/src/lab/solution10/views/LabTask10View.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,20 +48,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Byter/Documents/Projects/JavaLang/java-labs/labs-task11/src/lab/solution11/views&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "C:/Users/Byter/Documents/Projects/JavaLang/java-labs/labs-task12/src/lab/solution12/views",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Byter\Documents\Projects\JavaLang\java-labs\labs-task12\src\lab\solution12\views" />
       <recent name="C:\Users\Byter\Documents\Projects\JavaLang\java-labs\labs-task11\src\lab\solution11\views" />
       <recent name="C:\Users\Byter\Documents\Projects\JavaLang\java-labs\labs-task10\src\lab\solution10\views" />
       <recent name="C:\Users\Byter\Documents\Projects\JavaLang\java-labs\labs-task9\src\lab\solution9\views" />
@@ -77,11 +71,12 @@
       <recent name="C:\Users\Byter\Documents\Projects\JavaLang\java-labs\labs-task10" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="lab.solution12.controllers" />
       <recent name="lab.solution10.controllers" />
       <recent name="lab.solution9.controllers" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RunTask11">
+  <component name="RunManager" selected="Application.RunTask12">
     <configuration name="RunTask10" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="task.execute.RunTask10" />
       <module name="labs-task10" />
@@ -108,9 +103,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RunTask7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="task.execute.RunTask7" />
-      <module name="labs-task7" />
+    <configuration name="RunTask12" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="task.execute.RunTask12" />
+      <module name="labs-task12" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="task.execute.*" />
@@ -149,11 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RunTask12" />
         <item itemvalue="Application.RunTask11" />
         <item itemvalue="Application.RunTask10" />
         <item itemvalue="Application.RunTask9" />
         <item itemvalue="Application.RunTask8" />
-        <item itemvalue="Application.RunTask7" />
       </list>
     </recent_temporary>
   </component>
@@ -187,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679010622263</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ver=1.6">
+      <created>1679224561828</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679224561828</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -204,6 +206,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ver=1.5" />
     <MESSAGE value="ver=1.55" />
-    <option name="LAST_COMMIT_MESSAGE" value="ver=1.55" />
+    <MESSAGE value="ver=1.6" />
+    <option name="LAST_COMMIT_MESSAGE" value="ver=1.6" />
   </component>
 </project>

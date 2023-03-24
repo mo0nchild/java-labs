@@ -1,0 +1,20 @@
+.data-listview {
+    -fx-font-size: 15px;
+}
+
+.info-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+}
+
+.graphic-canvas {
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-border-color: #000;
+}
+
+.input-button {
+    -fx-background-color: #FFF;
+    -fx-border-color: #444;
+    -fx-font-weight: 700;
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="rootElement" maxHeight="600.0" maxWidth="900.0" prefHeight="600.0" prefWidth="900.0" stylesheets="/lab/solution12/views/LabTask12Style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lab.solution12.controllers.LabTask12Controller">
+
+        <Canvas fx:id="graphicPane" height="529.0" layoutX="14.0" layoutY="62.0" styleClass="graphic-canvas" width="878.0" />
+
+
+    <Label layoutX="139.0" layoutY="8.0" text="Размер:" />
+    <Label layoutX="300.0" layoutY="8.0" text="Расстояние между:" />
+    <Label layoutX="14.0" layoutY="8.0" text="Глубина рекурсии:" />
+    <Spinner fx:id="recursiveSpinner" layoutX="14.0" layoutY="25.0" prefHeight="25.0" prefWidth="85.0">
+        <valueFactory>
+            <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="1" max="6" min="1" />
+        </valueFactory>
+    </Spinner>
+   <Slider layoutX="139.0" layoutY="31.0" fx:id="sizeSlider" majorTickUnit="20.0" showTickMarks="true" value="20" min="10" max="200"/>
+    <Slider layoutX="300.0" layoutY="31.0" fx:id="lengthSizeSlider" majorTickUnit="10.0" showTickMarks="true" value="100" min="10" max="500"/>
+</AnchorPane>
